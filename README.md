@@ -4,7 +4,8 @@
 ![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
-헥토파이낸셜 PG 신용카드 빌키 API Java 연동 샘플입니다.  
+헥토파이낸셜 PG 신용카드 수기결제 및 빌키 API Java 연동 샘플입니다.  
+수기결제(구인증/비인증)로 카드 정보를 직접 입력해 결제하거나, 빌키를 발급받아 정기/반복 결제에 활용할 수 있습니다.  
 외부 라이브러리 없이 JDK 표준 라이브러리만 사용합니다.
 
 ---
