@@ -42,6 +42,9 @@ public class Config {
     /** 취소 API */
     public static final String PATH_CANCEL = "/spay/APICancel.do";
 
+    /** 빌키 삭제 API */
+    public static final String PATH_BILLKEY_DELETE = "/spay/APICardActionDelkey.do";
+
     /* ===== 고정 파라미터 ===== */
     public static final String VER    = "0A19";  // 전문버전
     public static final String METHOD = "CA";    // 결제수단: 신용카드
