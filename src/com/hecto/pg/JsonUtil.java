@@ -67,10 +67,10 @@ public class JsonUtil {
      * @return 키에 해당하는 값, 없으면 ""
      */
     public static String getValue(String json, String key) {
-        String searchKey = "\"" + key + "\"";
+        String searchKey = "\"" + key + "\":";
         int idx = json.indexOf(searchKey);
         if (idx < 0) return "";
-        idx = json.indexOf(":", idx + searchKey.length());
+        idx = idx + searchKey.length() - 1;
         if (idx < 0) return "";
         idx++;
         while (idx < json.length() && json.charAt(idx) == ' ') idx++;
@@ -81,7 +81,7 @@ public class JsonUtil {
             int start = idx + 1;
             int end = start;
             while (end < json.length()) {
-                if (json.charAt(end) == '"' && json.charAt(end - 1) != '\\') break;
+                if (json.charAt(end) == '"' && (end == start || json.charAt(end - 1) != '\\')) break;
                 end++;
             }
             return json.substring(start, end);
