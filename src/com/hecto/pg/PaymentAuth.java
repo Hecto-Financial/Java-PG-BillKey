@@ -59,7 +59,7 @@ public class PaymentAuth {
         /* ================================================================= */
         String trdAmt    = "1000";
         String cardNo    = "1111222233334444"; // 카드번호 (테스트용)
-        String vldDtYear = "24";              // 유효기간 년 (YY)
+        String vldDtYear = "27";              // 유효기간 년 (YY)
         String vldDtMon  = "12";              // 유효기간 월 (MM)
         String idntNo    = "991231";           // 생년월일 6자리 또는 사업자번호 10자리
         String cardPwd   = "00";              // 카드 비밀번호 앞 2자리
@@ -95,7 +95,7 @@ public class PaymentAuth {
         data.put("pktHash", pktHash);
 
         System.out.println("[ STEP 04 ] SHA-256 해시 생성");
-        System.out.println("  평문 : " + hashPlain);
+        System.out.println("  평문 : " + hashPlain.replace(licenseKey, "***"));
         System.out.println("  해시 : " + pktHash);
 
         /* ================================================================= */

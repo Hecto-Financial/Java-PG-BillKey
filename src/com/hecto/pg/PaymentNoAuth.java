@@ -60,7 +60,7 @@ public class PaymentNoAuth {
         /* ================================================================= */
         String trdAmt    = "1000";
         String cardNo    = "1111222233334444"; // 카드번호 (테스트용)
-        String vldDtYear = "24";              // 유효기간 년 (YY)
+        String vldDtYear = "27";              // 유효기간 년 (YY)
         String vldDtMon  = "12";              // 유효기간 월 (MM)
 
         Map<String, Object> data = new LinkedHashMap<>();
@@ -92,7 +92,7 @@ public class PaymentNoAuth {
         data.put("pktHash", pktHash);
 
         System.out.println("[ STEP 04 ] SHA-256 해시 생성");
-        System.out.println("  평문 : " + hashPlain);
+        System.out.println("  평문 : " + hashPlain.replace(licenseKey, "***"));
         System.out.println("  해시 : " + pktHash);
 
         /* ================================================================= */
