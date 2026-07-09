@@ -27,7 +27,6 @@ public class BillKeyDelete {
         /* ================================================================= */
         String mchtId     = Config.PG_MID_AUTH;   // 빌키 발급 시 사용한 MID와 동일하게 맞춰주세요.
         String licenseKey = Config.LICENSE_KEY;
-        String aesKey     = Config.AES256_KEY;
         String apiUrl     = Config.SERVER_URL + Config.PATH_BILLKEY_DELETE;
 
         /* ================================================================= */

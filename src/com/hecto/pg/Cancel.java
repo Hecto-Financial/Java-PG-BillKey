@@ -39,7 +39,7 @@ public class Cancel {
         LocalDateTime now = LocalDateTime.now();
         String trdDt     = now.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         String trdTm     = now.format(DateTimeFormatter.ofPattern("HHmmss"));
-        String mchtTrdNo = "NOAUTH_CANCEL" + trdDt + trdTm; // 실 연동 시 유니크한 값으로 교체해주세요.
+        String mchtTrdNo = "CANCEL" + trdDt + trdTm; // 실 연동 시 유니크한 값으로 교체해주세요.
 
         Map<String, Object> params = new LinkedHashMap<>();
         params.put("mchtId",    mchtId);          // 취소 전용 상점아이디
