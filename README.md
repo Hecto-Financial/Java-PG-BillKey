@@ -43,6 +43,7 @@ IDE(IntelliJ IDEA, Eclipse 등)에서 각 클래스를 열고 `main()` 메서드
 | `PaymentAuth` | **구인증 결제** — 카드번호 + 유효기간 + 생년월일 + 비밀번호 |
 | `PaymentNoAuth` | **비인증 결제** — 카드번호 + 유효기간만 (빌키 동시 발급 가능) |
 | `BillKeyPayment` | **빌키 결제** — 발급받은 빌키로 재결제 |
+| `BillKeyDelete` | **빌키 삭제** — 발급된 빌키 삭제 (복구 불가) |
 | `Cancel` | **취소** — 전체 취소 및 부분 취소 |
 
 ---
