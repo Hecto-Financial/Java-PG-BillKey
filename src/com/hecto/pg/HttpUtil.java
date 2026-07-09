@@ -8,6 +8,8 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
 
 /**
  * 헥토파이낸셜 API 통신 유틸리티
@@ -31,6 +33,11 @@ public class HttpUtil {
         try {
             URL url = URI.create(urlStr).toURL();
             conn = (HttpURLConnection) url.openConnection();
+            if (conn instanceof HttpsURLConnection) {
+                SSLContext sslCtx = SSLContext.getInstance("TLSv1.2");
+                sslCtx.init(null, null, null);
+                ((HttpsURLConnection) conn).setSSLSocketFactory(sslCtx.getSocketFactory());
+            }
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
             conn.setRequestProperty("Accept", "application/json");
