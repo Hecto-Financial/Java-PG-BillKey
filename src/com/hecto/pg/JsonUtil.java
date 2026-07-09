@@ -39,9 +39,6 @@ public class JsonUtil {
     /**
      * 응답 JSON에서 특정 섹션(params 또는 data) 추출
      *
-     * 주의: mchtParam 등 자유 텍스트 필드에 중괄호({})가 포함된 경우 파싱이 실패할 수 있습니다.
-     *       프로덕션 구현 시 Jackson, Gson 등 JSON 라이브러리 사용을 권장합니다.
-     *
      * @param json    응답 JSON 전문
      * @param section 추출할 섹션 이름 ("params" 또는 "data")
      * @return 해당 섹션의 JSON 문자열, 없으면 "{}"
