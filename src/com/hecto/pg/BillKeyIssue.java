@@ -83,7 +83,7 @@ public class BillKeyIssue {
         data.put("pktHash", pktHash);
 
         System.out.println("[ STEP 04 ] SHA-256 해시 생성");
-        System.out.println("  평문 : " + hashPlain);
+        System.out.println("  평문 : " + (Config.DEBUG ? hashPlain : hashPlain.replace(licenseKey, "***")));
         System.out.println("  해시 : " + pktHash);
 
         /* ================================================================= */
