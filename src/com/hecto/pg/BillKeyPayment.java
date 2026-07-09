@@ -37,7 +37,7 @@ public class BillKeyPayment {
         LocalDateTime now = LocalDateTime.now();
         String trdDt     = now.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         String trdTm     = now.format(DateTimeFormatter.ofPattern("HHmmss"));
-        String mchtTrdNo = "NOAUTH_BILL" + trdDt + trdTm;  // 실 연동 시 유니크한 값으로 교체해주세요.
+        String mchtTrdNo = "BILLKEY_PAY" + trdDt + trdTm;  // 실 연동 시 유니크한 값으로 교체해주세요.
 
         Map<String, Object> params = new LinkedHashMap<>();
         params.put("mchtId",    mchtId);          // 상점아이디
@@ -88,7 +88,7 @@ public class BillKeyPayment {
         data.put("pktHash", pktHash);
 
         System.out.println("[ STEP 04 ] SHA-256 해시 생성");
-        System.out.println("  평문 : " + hashPlain);
+        System.out.println("  평문 : " + (Config.DEBUG ? hashPlain : hashPlain.replace(licenseKey, "***")));
         System.out.println("  해시 : " + pktHash);
 
         /* ================================================================= */
