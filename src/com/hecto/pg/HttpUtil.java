@@ -1,6 +1,7 @@
 package com.hecto.pg;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -42,11 +43,11 @@ public class HttpUtil {
                 os.write(jsonBody.getBytes(StandardCharsets.UTF_8));
             }
 
-            // 응답 수신 (4xx/5xx는 ErrorStream에서 수신)
+            // 응답 수신 (4xx/5xx는 ErrorStream에서 수신, null 반환 시 빈 문자열 처리)
             int statusCode = conn.getResponseCode();
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                    statusCode < 400 ? conn.getInputStream() : conn.getErrorStream(),
-                    StandardCharsets.UTF_8))) {
+            InputStream is = statusCode < 400 ? conn.getInputStream() : conn.getErrorStream();
+            if (is == null) return "";
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
                 StringBuilder response = new StringBuilder();
                 String line;
                 while ((line = br.readLine()) != null) {

@@ -24,6 +24,10 @@ public class Config {
     /** AES-256-ECB 파라미터 암복호화 키 */
     public static final String AES256_KEY = "pgSettle30y739r82jtd709yOfZ2yK5K";
 
+    /* ===== 디버그 모드 ===== */
+    /** true: 해시 평문 전체 출력 / false: licenseKey 마스킹 (운영 배포 시 false로 변경) */
+    public static final boolean DEBUG = true;
+
     /* ===== 서버 URL ===== */
     public static final String SERVER_URL = "https://tbgw.settlebank.co.kr";   // 테스트 서버
  // public static final String SERVER_URL = "https://gw.settlebank.co.kr";     // 운영 서버
