@@ -95,6 +95,7 @@ PaymentAuth / PaymentNoAuth  →  (billKey + trdNo 저장)  →  BillKeyPayment 
 | API | 조합 |
 |-----|------|
 | 빌키 발급 | `trdDt + trdTm + mchtId + mchtTrdNo + "0" + licenseKey` |
+| 빌키 삭제 | `trdDt + trdTm + mchtId + mchtTrdNo + "0" + licenseKey` |
 | 결제 (구인증 / 비인증 / 빌키) | `trdDt + trdTm + mchtId + mchtTrdNo + trdAmt(평문) + licenseKey` |
 | 취소 | `trdDt + trdTm + mchtId + mchtTrdNo + cnclAmt(평문) + licenseKey` |
 
