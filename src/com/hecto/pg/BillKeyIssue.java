@@ -37,7 +37,7 @@ public class BillKeyIssue {
         LocalDateTime now = LocalDateTime.now();
         String trdDt     = now.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         String trdTm     = now.format(DateTimeFormatter.ofPattern("HHmmss"));
-        String mchtTrdNo = "AUTH_API" + trdDt + trdTm;  // 실 연동 시 유니크한 값으로 교체해주세요.
+        String mchtTrdNo = "BILLKEY_ISS" + trdDt + trdTm; // 실 연동 시 유니크한 값으로 교체해주세요.
 
         Map<String, Object> params = new LinkedHashMap<>();
         params.put("mchtId",    mchtId);          // 상점아이디
@@ -59,7 +59,7 @@ public class BillKeyIssue {
         String cardNo    = "5221120000001621"; // 카드번호 (테스트용)
         String idntNo    = "620817";           // 생년월일 6자리 또는 사업자번호 10자리
         String vldDtMon  = "11";              // 유효기간 월 (MM)
-        String vldDtYear = "25";              // 유효기간 년 (YY)
+        String vldDtYear = "27";              // 유효기간 년 (YY)
         String cardPwd   = "00";              // 카드 비밀번호 앞 2자리
 
         Map<String, Object> data = new LinkedHashMap<>();
