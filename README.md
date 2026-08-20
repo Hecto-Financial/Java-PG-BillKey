@@ -101,3 +101,7 @@ PaymentAuth / PaymentNoAuth  →  (billKey + trdNo 저장)  →  BillKeyPayment 
 
 > 금액 필드(trdAmt, cnclAmt)는 암호화 전 **평문값**으로 해시를 생성해주세요.
 
+## 문의
+
+- 기술 문의: pgsupport@hecto.co.kr
+- 개발 가이드: [헥토파이낸셜 개발자 센터](https://developers.hectofinancial.co.kr)
